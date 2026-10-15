@@ -21,7 +21,7 @@ The official source reference supplied by the owner is [cynthia-you/TJ_FX_ROBOT_
 | [DEMO_PYTHON](https://github.com/cynthia-you/TJ_FX_ROBOT_CONTRL_SDK/tree/53ebaa809c2ee5d90b9bed1cafd22c970bd24228/DEMO_PYTHON), [DEMO_C++](https://github.com/cynthia-you/TJ_FX_ROBOT_CONTRL_SDK/tree/53ebaa809c2ee5d90b9bed1cafd22c970bd24228/DEMO_C%2B%2B) | Usage examples |
 | [MarvinPlatform_EN](https://github.com/cynthia-you/TJ_FX_ROBOT_CONTRL_SDK/tree/53ebaa809c2ee5d90b9bed1cafd22c970bd24228/MarvinPlatform_EN) | English platform/debugging distribution supplied upstream |
 
-The provided local SDK differs from current `master` in some files. The release preserves the local snapshot instead of silently upgrading its controller-facing code. Controller 100342 compatibility is not established by the supplied version descriptions; check with the vendor before selecting a control library.
+The provided local SDK differs from the inspected `master` revision in some files. The release preserves the local snapshot instead of silently upgrading its controller-facing code. Controller 100342 compatibility is not established by the supplied version descriptions; check with the vendor before selecting a control library.
 
 The supplied URDF link pointed to a branch using a `blob` URL. The actual [documentation branch at revision `2ae22e4bec5ea1ce8bebbfcd4c15713bc56414b6`](https://github.com/cynthia-you/TJ_FX_ROBOT_CONTRL_SDK/tree/2ae22e4bec5ea1ce8bebbfcd4c15713bc56414b6/URDF) contains M3/M6 arm URDF archives. Those are upstream arm resources; they do not provide the complete wheeled robot's calibrated model or replace the missing full-body service.
 
@@ -40,3 +40,13 @@ A complete source-to-destination inventory and unmodified input backups are kept
 Two later owner-supplied folders describe hand application development and fingertip-target IK integration, with source inventories and selected historical debugging excerpts. They add context for task requirements, client adaptation, deployment, software decisions and observed failures. The published English development notes synthesize those materials and the matching source already in the release/reference archives; they do not duplicate the private conversation excerpts, local paths or host identifiers.
 
 The excerpts explicitly show Codex assistance in code changes, analysis and regression testing. The personal role is described through requirements, field feedback, deployment, execution and interpretation. Claims of independent authorship of the SDK, hand model or IK solver are not added. Later documentation/export utilities are preparation artifacts, not evidence of extra internship experiments.
+
+## How to read the evidence
+
+| Claim type | Source and boundary |
+| --- | --- |
+| Implemented functions and dependencies | Supplied source and attributed snapshots establish that the code exists. They do not establish who wrote every function or whether it ran successfully on hardware. |
+| IK counts, brackets and joint-arrival discrepancies | Recomputed from supplied JSON summaries, with the original-language evidence preserved. Most records are summaries rather than raw controller logs. |
+| Vision drift, hand-sensing observations and navigation work | Reported in the owner's CV, diary or supplied work notes. Missing raw vision logs, calibrated hand measurements and navigation exports prevent independent reproduction of those observations. |
+| Grasp-client debugging and deployment | Supplied excerpts document assisted iteration and a field run ending at a pre-motion read timeout. No later successful complete grasp is inferred. |
+| English guides, normalized data, figure, fetcher and added checks | Created during portfolio preparation. Offline test passes validate the checked software behavior, not new robot experiments. |

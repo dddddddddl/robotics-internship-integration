@@ -39,7 +39,7 @@ The systematic Y trend motivated checking camera extrinsics, joint zero offsets,
 
 ## Arm IK and physical testing
 
-The available classic offset example reads the current body-frame TCP, applies a Cartesian offset, converts the target into the vendor IK base frame, and requests a joint solution. Translation is specified in millimeters and rotation in degrees. It calculates by default; motion requires `--execute`.
+The available classic offset client reads the current body-frame TCP, applies a Cartesian offset, and sends the body-frame target to the arm IK service. The service converts that target into the vendor IK base frame before requesting a joint solution. Translation is specified in millimeters and rotation in degrees. The client calculates by default; motion requires `--execute`.
 
 The later experiment records refer to an index-fingertip control point and a full-body IK service, not simply the classic TCP offset example. The records distinguish numerical failure, service safety rejection, dry-run success, and executed movement. They also use several baseline poses. Combining all offsets into one global reachable-volume estimate would erase those distinctions.
 

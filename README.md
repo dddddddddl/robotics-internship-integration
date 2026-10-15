@@ -15,7 +15,7 @@ My internship work combined test configuration and execution with coding-assiste
 - Checked camera-to-ground transformations while varying head yaw and pitch; organized terminal observations into stable and transitional segments for drift analysis.
 - Ran arm drag, hand open/close, and assisted bimanual grasp/load observations with colleagues; varied Cartesian offsets and recorded IK feasibility, joint feedback, and physical clearance.
 - Adapted B-hand service calls to arm B / COM3 / device ID1 and continuous Bash acquisition, including timeouts and clean interruption; inspected fingertip tactile and six-channel actual-force responses.
-- Participated in hand-client iteration around grasp completion, register readback and six-channel position input; reported field behavior, deployed a revised client, and returned robot-side diagnostic output. See [hand-control development](docs/hand-control-development.md).
+- Participated in grasp-client iteration around completion checks and register readback; reported field behavior, deployed a revised client, and returned robot-side diagnostic output. See [hand-control development](docs/hand-control-development.md).
 - Adapted the fingertip-target IK workflow with coding assistance: clarified sensor/TCP transforms, diagnosed missing body-state input, and used an explicit assumed-body calculation mode for the constrained setup. See [IK client development](docs/fingertip-ik-development.md).
 - Configured navigation maps, virtual walls, restricted zones, docking positions, and routes in Leju Mobile/Design, as described in my CV. No exported map or navigation configuration was supplied for this repository.
 

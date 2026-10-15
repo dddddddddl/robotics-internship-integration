@@ -22,7 +22,7 @@ The similar `11_hand_read_forces_rs485_ros2.py` remains an alternative reference
 
 ## A stale status is not completion of a new command
 
-The field report described fingers moving briefly rather than completing the intended grasp. The code review identified a completion rule that could accept an arrival/stop status left over from the preceding open command. That is a software failure mode supported by the regression tests; the later field run does not prove it was the sole cause of the physical symptom.
+The field report described fingers moving briefly rather than completing the intended grasp. The supplied Codex-assisted debugging excerpt identified a completion rule that could accept an arrival/stop status left over from the preceding open command. That is a software failure mode supported by the regression tests; the later field run does not prove it was the sole cause of the physical symptom.
 
 In `motion_finished()` the revised grasp logic checks each active channel. Actual angle feedback within 30 normalized command units of the target can finish that channel. Otherwise, force-stop completion requires the corresponding stop status plus evidence of movement greater than 10 command units or a load magnitude of at least `max(50, force_threshold // 2)`. Those thresholds are implementation settings, not measured positioning or force accuracy.
 

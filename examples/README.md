@@ -6,7 +6,7 @@ These are English reading copies of selected supplied scripts. Service names, re
 | --- | --- | --- |
 | [camera_to_ground_test.py](ros2/camera_to_ground_test.py) | Transform detection points using the current camera-to-ground matrix | Read-only subscriptions |
 | [camera_to_ground_pose_test.py](ros2/camera_to_ground_pose_test.py) | Transform tag positions and orientations | Read-only subscriptions |
-| [cartesian_offset_ik.py](ros2/cartesian_offset_ik.py) | Body-frame offset → vendor IK-frame target → arm IK request | Calculates by default; `--execute` sends motion |
+| [cartesian_offset_ik.py](ros2/cartesian_offset_ik.py) | Send a body-frame offset target to the arm IK service; the server converts it into the vendor IK frame | Calculates by default; `--execute` sends motion |
 | [arm_ros2_common.py](ros2/arm_ros2_common.py) | Shared controller-service calls, A/B indexing, shutdown | Uses the existing controller connection |
 | [drag_arm_a.py](ros2/drag_arm_a.py), [drag_arm_b.py](ros2/drag_arm_b.py) | Enable drag mode and observe arm feedback | Changes arm control mode |
 | [hand_open_close.py](ros2/hand_open_close.py) | Hand speeds, force limits, and angle sequences | Moves fingers unless `--dry-run` |

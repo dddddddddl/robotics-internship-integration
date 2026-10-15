@@ -6,7 +6,7 @@ The primary scripts use the existing `/arm/robot_control` and `/hand/hand_contro
 
 The included `.so` files are **Linux aarch64 ELF** libraries. They cannot run on macOS merely because the host has an ARM CPU. A Linux aarch64 robot computer with the compatible controller is required. Other Linux architectures need matching libraries from the vendor. The actual controller firmware used for the recorded experiments is not established by the supplied evidence.
 
-The classic offset client uses `Marvin_Kine.ik` through `arm_ik_node`; it does not need the optional Pinocchio service. The available Pinocchio implementation depends on the robotics Pinocchio library and its own CSV model. Supplementary Modbus clients need `pymodbus`; they are not required for the demonstrated ROS hand-service path. Versions for these optional integrations have not been verified here.
+The classic offset client uses `Marvin_Kine.ik` through `arm_ik_node`; it does not need the optional Pinocchio service. The available Pinocchio implementation depends on the robotics Pinocchio library and its own CSV model. Some supplementary platform Modbus drivers import `pymodbus`; the direct hand-force Modbus TCP application uses standard-library `socket` and `struct` instead. Neither route is required for the demonstrated ROS hand-service path. Versions for the optional platform integrations have not been verified here.
 
 ## Obtain and build
 
