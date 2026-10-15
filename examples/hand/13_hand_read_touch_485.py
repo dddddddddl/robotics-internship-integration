@@ -185,7 +185,7 @@ def registers_to_float(registers, index):
 def parse_touch_values(registers):
     if len(registers) != TOUCH_REGISTER_COUNT:
         raise ValueError(
-            f"Expected tactile register count: {TOUCH_REGISTER_COUNT} registers;"
+            f"Expected tactile register count: {TOUCH_REGISTER_COUNT} registers; "
             f"received {len(registers)} items"
         )
     return {
@@ -225,7 +225,7 @@ class LeftHandTouchReader(Node):
 
         if not future.done():
             future.cancel()
-            raise RuntimeError(f"Service {client.srv_name} responsetimed out")
+            raise RuntimeError(f"Service {client.srv_name} response timed out")
         if future.exception() is not None:
             raise RuntimeError(
                 f"Service {client.srv_name} exception: {future.exception()}"
@@ -344,7 +344,7 @@ def main():
         f"Connection: ROS 2 -> {ROBOT_IP} -> "
         f"{ARM_ID}/COM{COM}/ID{HAND_ID}"
     )
-    print(f"Read target: {target}; fields: Normal forceandTangential force。")
+    print(f"Read target: {target}; fields: normal force and tangential force.")
     print("Read-only: sends 0x11 reads; no register writes or motion commands.")
     print("Lightly press the tactile surface; do not forcibly bend the finger.")
 
@@ -379,7 +379,7 @@ def main():
 
                 if consecutive_failures >= args.max_failures:
                     print(
-                        "Monitor stopped. If timeouts persist, check whether this hand has"
+                        "Monitor stopped. If timeouts persist, check whether this hand has "
                         "enabled fingertip tactile sensors."
                     )
                     return 1

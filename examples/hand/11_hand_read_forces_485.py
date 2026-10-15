@@ -191,7 +191,7 @@ class LeftHandForceReader(Node):
 
         if not future.done():
             future.cancel()
-            raise RuntimeError(f"Service {client.srv_name} responsetimed out")
+            raise RuntimeError(f"Service {client.srv_name} response timed out")
         if future.exception() is not None:
             raise RuntimeError(
                 f"Service {client.srv_name} exception: {future.exception()}"
