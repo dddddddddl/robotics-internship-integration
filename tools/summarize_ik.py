@@ -35,7 +35,7 @@ def normalize(d):
     row = dict(point_index=point, record_type='repeat' if repeat else 'formal',
                success=d['ik_success'], recorded_motion=bool(observed),
                execute_requested=d.get('execute', d.get('execute_requested', False)),
-               status=status, direction=d.get('direction',d.get('direction_ground','none')),
+               status=status, direction=d.get('direction',d.get('direction_ground','none')).replace('（远离腰部）',' (away from waist)').replace('并改变姿态',' with orientation change'),
                distance_mm=d.get('distance_mm',''),
                cumulative_distance_mm=d.get('cumulative_distance_from_common_baseline_mm',d.get('cumulative_distance_mm','')),
                position_error_m=d.get('position_error_m'),

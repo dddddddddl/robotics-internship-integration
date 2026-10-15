@@ -39,6 +39,8 @@ def test_reconcile_records_and_separate_repeat():
     assert (counts['formal_records'],counts['repeat_records'],counts['recorded_ik_success'],counts['recorded_ik_failure'],counts['recorded_motion'])==(70,1,54,16,29)
     assert sorted(r['point_index'] for r in rows if r['record_type']=='formal')==list(range(1,71))
     assert counts['suspected_contact_records']==[28]
+    assert next(r for r in rows if r['point_index']==29)['direction']=='ground Y+ (away from waist)'
+    assert next(r for r in rows if r['point_index']==37)['direction']=='ground X+Y-Z+ with orientation change'
     for r in rows:
         if r['point_index']>=46:assert not r['recorded_motion']
     assert next(r for r in rows if r['point_index']==31)['execute_requested']
