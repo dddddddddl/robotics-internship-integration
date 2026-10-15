@@ -31,3 +31,11 @@ ROS 2, the Linux aarch64 libraries, controller firmware compatibility, colcon bu
 The later full-body interface/server and exact dated client from the transcripts are missing. No attempt is made to replace them with the earlier arm/leg backend. Original camera logs and the reported 568-record CSV dataset are missing. Raw hand acquisition logs, surveyed localization ground truth, a force calibration, navigation exports, and the original metrology workbook are also unavailable.
 
 One supplied numerical-model README is unreadable binary data. It was retained locally and replaced with a fresh English guide. Original Chinese narratives/workbooks and multilingual third-party snapshots remain optional evidence/reference downloads; the repository is not claimed to be a translation of every vendor file.
+
+## Supplementary development-note review
+
+The owner later supplied separate hand and IK work summaries, selected debugging excerpts and file inventories. All 12 top-level hand Python files and both archived later IK clients match those inventories by SHA-256; no replacement control implementation was introduced. The notes were checked against the supplied `motion_finished`, `write_registers_verified`, `parse_target` and `wait_until_reached` implementations.
+
+The hand bundle's **14 existing unittest cases passed again** on the preparation host. This is a separate suite from the 19 repository tests above, not a claim that `pytest` discovers 33 tests in a normal clone. To run it, follow [hand-control development](hand-control-development.md#repeat-the-existing-offline-checks). It uses fake feedback, ROS import stubs and mocks; no live ROS or hardware call was made.
+
+The largest 0.038-degree arrival discrepancy reported for tests 007–011 was checked against those source records. It is controller-feedback evidence, not a new measurement or a physical Cartesian-accuracy claim. The 70 formal records and one repeat remain unchanged.

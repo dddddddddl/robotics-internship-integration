@@ -20,3 +20,7 @@ The B-hand polling scripts reflect the diary's tested wiring. The direct-transfe
 The original force diagnostic displayed `g`; the English copy uses `device units` because the supplied evidence does not establish a calibration for the tested device. Tactile normal/tangential names are protocol fields, not a calibration claim.
 
 The [runtime guide](../docs/robot-setup.md) explains how to obtain and build all four ROS packages, including the generated interfaces, helper modules, YAML/CSV configurations, and native libraries. Supplementary hand status, free-position, grasp, Modbus, and SDK examples are preserved in the hand reference release bundle; their execution is outside the diary-backed demonstration scope.
+
+## Additional application development
+
+The published hand reference bundle also contains single-finger, grasp-sequence and six-channel position applications with two existing offline test files. [Hand-control development](../docs/hand-control-development.md) maps those sources, explains the differing completion rules and write verification, and provides the 14-test command. The last supplied grasp deployment reached a pre-motion RS485 timeout; no subsequent completed grasp is documented.

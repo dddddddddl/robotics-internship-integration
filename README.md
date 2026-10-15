@@ -1,6 +1,6 @@
 # Mobile Robot Integration and Validation
 
-**Vision–ground coordinate consistency, Cartesian IK experiments, and dexterous-hand diagnostics on a commercial mobile dual-arm robot.**
+**Vision–ground coordinate consistency, fingertip-target IK experiments, and dexterous-hand application development on a commercial mobile dual-arm robot.**
 
 Siyuan Lin · Robotics Systems Integration Internship · Suzhou Jiuwu Intelligent Technology Co., Ltd. · Summer 2026
 
@@ -10,14 +10,27 @@ Start with the [technical case study](docs/technical-case-study.md), then inspec
 
 ## My work
 
-My internship work focused on configuring tests, adapting parameters and diagnostic scripts, running robot experiments, and interpreting feedback:
+My internship work combined test configuration and execution with coding-assisted adaptation of application clients and diagnostic workflows:
 
 - Checked camera-to-ground transformations while varying head yaw and pitch; organized terminal observations into stable and transitional segments for drift analysis.
 - Ran arm drag, hand open/close, and assisted bimanual grasp/load observations with colleagues; varied Cartesian offsets and recorded IK feasibility, joint feedback, and physical clearance.
 - Adapted B-hand service calls to arm B / COM3 / device ID1 and continuous Bash acquisition, including timeouts and clean interruption; inspected fingertip tactile and six-channel actual-force responses.
+- Participated in hand-client iteration around grasp completion, register readback and six-channel position input; reported field behavior, deployed a revised client, and returned robot-side diagnostic output. See [hand-control development](docs/hand-control-development.md).
+- Adapted the fingertip-target IK workflow with coding assistance: clarified sensor/TCP transforms, diagnosed missing body-state input, and used an explicit assumed-body calculation mode for the constrained setup. See [IK client development](docs/fingertip-ik-development.md).
 - Configured navigation maps, virtual walls, restricted zones, docking positions, and routes in Leju Mobile/Design, as described in my CV. No exported map or navigation configuration was supplied for this repository.
 
-The robot platform, vendor SDK, and supplied ROS drivers are existing dependencies. Their source is attributed in [provenance and licensing](docs/provenance.md). This repository presents my integration and test work; it does not claim authorship of the underlying robot controller or IK solver.
+Codex assisted client adaptation and debugging. The robot platform, vendor SDK, and supplied ROS drivers are existing dependencies. Their source is attributed in [provenance and licensing](docs/provenance.md). This repository presents my integration and test work; it does not claim authorship of the underlying robot controller or IK solver.
+
+## Technology stack
+
+| Layer | Technologies and role |
+| --- | --- |
+| Application and analysis | Python, ROS 2 clients, NumPy kinematics and CSV analysis |
+| Diagnostics | Bash polling, RS485 vendor framing and a standard-library Modbus TCP client |
+| Native dependency | Vendor C++ control/kinematics SDK and C++ examples, preserved with attribution in the source release |
+| Robot environment | Ubuntu/Linux, ROS 2 Humble and the existing Pinocchio service/model |
+
+The vendor C++ sources are available in the [dependency source release](https://github.com/dddddddddl/robotics-internship-integration/releases/tag/source-snapshots-v1), alongside their original license notices.
 
 ## Selected observations
 
@@ -27,6 +40,7 @@ The robot platform, vendor SDK, and supplied ROS drivers are existing dependenci
 | Numerical boundary refinement | X+, Y+, Z+ success/failure brackets narrowed to 6.25 mm in later dry runs | Different directions and fixed baselines; these are solver/service acceptance brackets, not measured collision-free workspace. [Details](data/ik/README.md). |
 | Physical clearance | Test 028 solved and moved, but suspected waist contact was reported; test 029 records retraction | Preserved as an adverse result, not counted as a safe manipulation success. |
 | Vision consistency | Diary reports 568 yaw records, about 5.3 mm pitch-associated drift and 38 mm yaw-associated drift | Original vision logs/CSVs were not supplied. These are reported observations, not independently reproduced accuracy measurements. |
+| Hand application regression | 14 supplied hand tests passed again during the supplementary review | Checks framing, target parsing, completion rules and ignored writes; the last supplied A-hand grasp run stopped at a pre-motion RS485 read timeout. [Development notes](docs/hand-control-development.md). |
 | Hand sensing | Contact-sensitive tactile readings, changing thumb channels, and intermittent RS485 timeouts | Qualitative diary observations; no calibrated force curve or raw acquisition dataset is available. |
 
 ![Recorded IK outcomes](assets/ik-recorded-outcomes.png)
@@ -36,6 +50,8 @@ The robot platform, vendor SDK, and supplied ROS drivers are existing dependenci
 | Location | What to inspect |
 | --- | --- |
 | [docs/technical-case-study.md](docs/technical-case-study.md) | Methods, engineering observations, and interpretation |
+| [docs/hand-control-development.md](docs/hand-control-development.md) | Hand application modules, command/feedback decisions, field debugging and 14 offline checks |
+| [docs/fingertip-ik-development.md](docs/fingertip-ik-development.md) | Sensor-to-TCP targets, state-source diagnosis and guarded execution |
 | [examples/](examples/README.md) | English ROS 2 clients and B-hand polling scripts |
 | [offline_kinematics/](offline_kinematics/README.md) | NumPy kinematic model, frame transforms, and plotting helpers |
 | [experiments/ik/](experiments/ik/README.md) | Waypoint/grid utilities and recorded-joint visualization |

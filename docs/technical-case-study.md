@@ -57,6 +57,8 @@ For the right/B hand, I adapted the service arguments to `arm_id=B`, `com=3`, an
 
 `/hand/read_actual_forces` returned six device channels: pinky, ring, middle, index, thumb flexion, and thumb rotation. A representative unloaded vector was `[55, 64, 160, 193, -32, 63]`. The diary reports thumb-channel ranges of approximately −136 to 2430 and −554 to 141 during manual loading, followed by return toward baseline. These are device values, not calibrated newtons. Because action changes were not timestamp-annotated, the records do not establish an exact mapping between each manual loading direction and each response.
 
+The supplementary [hand-development notes](hand-control-development.md) explain the later grasp/position applications, their regression checks and the last supplied field failure. The [IK-development notes](fingertip-ik-development.md) trace the sensor-to-TCP target and body-state diagnosis. These deepen the development account without adding new physical experiments.
+
 ## Navigation experience
 
 The CV describes configuring multi-zone maps, virtual walls, no-go areas, docking locations, and routes using Leju Mobile/Design, plus checking ROS 2 nodes, topics, and transform chains. The supplied archive does not contain an exported navigation project, measured route-success dataset, or a personally authored navigation stack. This work is included as internship context rather than represented by unrelated navigation source from the larger workspace.

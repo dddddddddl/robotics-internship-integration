@@ -34,3 +34,9 @@ An unrelated controller maintenance/reboot client containing an embedded login c
 Unrelated voice/AI packages, proprietary-marked force-sensor packages outside the demonstrated dependency path, navigation assets with no connection to the documented work, caches, installed dependencies, and build logs are excluded. Manual summaries in the optional hand reference archive remain attributed reference material; they are not recast as an original hardware manual.
 
 A complete source-to-destination inventory and unmodified input backups are kept locally for the owner. The public evidence archive redacts local user/attachment paths while retaining numerical test values and original narrative evidence.
+
+## Supplementary work summaries
+
+Two later owner-supplied folders describe hand application development and fingertip-target IK integration, with source inventories and selected historical debugging excerpts. They add context for task requirements, client adaptation, deployment, software decisions and observed failures. The published English development notes synthesize those materials and the matching source already in the release/reference archives; they do not duplicate the private conversation excerpts, local paths or host identifiers.
+
+The excerpts explicitly show Codex assistance in code changes, analysis and regression testing. The personal role is described through requirements, field feedback, deployment, execution and interpretation. Claims of independent authorship of the SDK, hand model or IK solver are not added. Later documentation/export utilities are preparation artifacts, not evidence of extra internship experiments.
