@@ -43,6 +43,14 @@ ros2 run marvin_robot frame_kinematics_node
 ros2 run marvin_robot arm_ik_node
 ```
 
+After a manual controller-node startup, establish its controller connection before expecting arm feedback (use the actual LAN address):
+
+```bash
+ros2 service call /arm/connect_robot marvin_interfaces/srv/Connect "{robot_ip: '192.168.1.190'}"
+```
+
+The camera-frame path also requires the platform's body/head controller to publish fresh `/joint_states` in radians. The included frame node subscribes to that topic plus `/arm/joint_states` (or `/arm/joint_positions_deg`); starting the four nodes alone does not create body/head feedback or camera detections. Those hardware drivers are prerequisites from the existing robot stack, outside this selected arm/hand source bundle.
+
 These nodes connect software to real hardware and are not an offline simulation. The inherited supervised launch is preserved as reference, but is not the recommended startup entry here: it can enable position/torque modes and contains a machine-specific shutdown path. No controller update, automatic motion, or launch was executed during preparation.
 
 ## Read-only examples

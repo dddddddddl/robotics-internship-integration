@@ -26,7 +26,7 @@ Synthetic protocol frames are test fixtures, not recorded measurements. The norm
 
 ## Unverified or unavailable
 
-ROS 2, the Linux aarch64 libraries, controller firmware compatibility, colcon builds, perception topics, native SDK loading, and real robot motion were not exercised on this host. The hardware setup commands are documented from source inspection and require validation on the actual robot.
+ROS 2, the Linux aarch64 libraries, controller firmware compatibility, colcon builds, perception topics, body/head feedback publishers, native SDK loading, and real robot motion were not exercised on this host. The hardware setup commands are documented from source inspection and require validation on the actual robot.
 
 The later full-body interface/server and exact dated client from the transcripts are missing. No attempt is made to replace them with the earlier arm/leg backend. Original camera logs and the reported 568-record CSV dataset are missing. Raw hand acquisition logs, surveyed localization ground truth, a force calibration, navigation exports, and the original metrology workbook are also unavailable.
 
