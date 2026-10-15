@@ -1,0 +1,12 @@
+{
+  "formal_records": 70,
+  "repeat_records": 1,
+  "recorded_ik_success": 54,
+  "recorded_ik_failure": 16,
+  "recorded_motion": 29,
+  "suspected_contact_records": [
+    28
+  ],
+  "evidence_type": "Supplied structured test summaries; only test 001 includes raw terminal output.",
+  "hardware_reexecuted": false
+}

@@ -1,0 +1,14 @@
+{
+  "robot_runtime_source_snapshot.zip": {
+    "bytes": 1848009,
+    "sha256": "560718ecbdaf21dba64f0aceb61ce54a558eadc59b9847e36112b9932a97f968"
+  },
+  "marvin_vendor_sdk_source_snapshot.zip": {
+    "bytes": 150602032,
+    "sha256": "86d5e1bfeff67fe87e661c64aeafc00a750674c2ff311aa9c4d409d815570a5a"
+  },
+  "hand_diagnostics_source_snapshot.zip": {
+    "bytes": 94925,
+    "sha256": "e15762c86683ab7e8b6fa8606ab2bb0f95c2d69dd947e5aa93a801882c920e69"
+  }
+}
