@@ -18,4 +18,6 @@ python tools/fetch_sources.py --all
 
 The fetcher checks hashes, rejects path traversal and symlink entries, and refuses to overwrite an existing extracted target. It relocates three runtime files' native-library paths in the extracted working copy. The release archives stay unchanged; `.runtime/relocation_changes.json` records the edits. It does not install dependencies, start services, connect to a controller, or issue motion commands.
 
+An unrelated controller maintenance/reboot client containing an embedded login credential is excluded from the runtime release; its original remains local. It is not imported by the selected examples. 
+
 Original vendor licenses are retained under [licenses/](licenses/). Attribution and package-level licensing gaps are explained in [provenance](../docs/provenance.md). Availability here does not turn third-party code into personally authored code or supply a new blanket license.

@@ -7,6 +7,7 @@
 - Translated selected examples' messages, argument help, and explanatory text. Kept joint values, service names, register addresses, and control flow. Original source remains in the release snapshots.
 - Repaired the IK viewer's model import path, replaced the head-metrology wrapper's stale Windows filename with a CLI input, removed an unused machine-specific path from the offset client, and added test discovery paths.
 - Made the B-hand loops require a sourced ROS environment, preserving their wiring, timeout, and interval settings. Changed the force diagnostic's unverified `g` display label to `device units`.
+- Excluded an unrelated controller maintenance/reboot script with an embedded credential from the public runtime bundle.
 - Added a checksum-verifying source fetcher. In the extracted working copy it relocates three files' native-library paths. It leaves release archives unchanged and records the patched filenames. Added missing empty ament resource markers when assembling the runtime snapshot.
 
 These are repository-preparation changes, not claims about software originally written or tests originally executed during the internship.

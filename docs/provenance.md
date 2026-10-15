@@ -29,6 +29,8 @@ The supplied URDF link pointed to a branch using a `blob` URL. The actual [docum
 
 The MARVIN SDK includes an Apache 2.0 license with the original vendor copyright. That notice is preserved verbatim, including its Chinese legal entity name. `marvin_interfaces` also supplies an Apache 2.0 notice. The hand packages declare Apache 2.0 in their package metadata. The supplied `marvin_robot` metadata still says `TODO: License declaration`; this repository does not infer a blanket Apache license for all internship source. No new repository-wide license has been added.
 
+An unrelated controller maintenance/reboot client containing an embedded login credential is excluded from the runtime release; its original remains local. It is not imported by the selected examples. 
+
 Unrelated voice/AI packages, proprietary-marked force-sensor packages outside the demonstrated dependency path, navigation assets with no connection to the documented work, caches, installed dependencies, and build logs are excluded. Manual summaries in the optional hand reference archive remain attributed reference material; they are not recast as an original hardware manual.
 
 A complete source-to-destination inventory and unmodified input backups are kept locally for the owner. The public evidence archive redacts local user/attachment paths while retaining numerical test values and original narrative evidence.
